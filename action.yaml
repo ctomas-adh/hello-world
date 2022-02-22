@@ -1,0 +1,52 @@
+name: "ADH API Request"
+description: "Call the fastAPI orchestration API and get the result."
+author: "Atos ADH"
+branding:
+  icon: "send"
+  color: "green"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+inputs:
+  method:
+    type: choice
+    description: HTTP method
+    options: 
+      - GET
+      - POST
+      - PUT
+      - PATCH
+      - DELETE
+    required: true
+  url:
+    type: string
+    description: Orchestration API URL
+    default: https://
+    required: true
+  timeout:
+    type: number
+    description: Request Timeout (seconds)
+    default: 30
+    required: true 
+  content_type:
+    type: string
+    description: Content-Type
+    required: false
+  data:
+    type: string
+    description: Body Content
+    required: false
+  auth_string:
+    type: string
+    description: Auth token | username/password
+    required: false
+  ignore_status:
+    description: Ignore Defined Status Code Responses
+    required: false
+  fake_response:
+    type: boolean
+    description: Limit Fake Response
+    required: false
+outputs:
+  response_status:
+    description: 'Status code of the response'

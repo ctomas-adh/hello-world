@@ -1,0 +1,10 @@
+export INPUT_METHOD=POST
+#export INPUT_URL=https://reqbin.com/echo/get/json
+export INPUT_URL=https://1a8c-2a0c-5a80-5002-6400-7997-eb27-9fd6-aa9a.ngrok.io/hooks/generic
+export INPUT_TIMEOUT=60
+export INPUT_CONTENT_TYPE=application/json
+export INPUT_DATA='{ "foo": "bar", "somekey": "somevalue" }'
+export INPUT_AUTH_STRING="carlostomas/Full_ de_mang0!"
+#export INPUT_AUTH_STRING=CqGZthigPO55H3fi1_6wrP9jmdivueS7lYd7Lg2styBfjsK5eQ5C2qg_gONQgzyvvVojXY0JyMkRdm71y3nTFl1ZYOgJSNLshvWnm9QoEJrInp_xr-o-9RgZHhrGp5X9dCZVYsYF1WHqj5p75O37IKc8Rv6yO9kGw1flCbT4xbeLTDItX71jRzuAHYNKGPKkxrhIuQ-w9MyKYZ0a3pYT4lWZzWVFoMu9G-smC4qrww5grWCUevE9LuNEZgSijFgRK9QPo8PxMt427lGyK-FkoB8x4qllQ1aCG9_mz2t6A1nRxXY7-Jq9ONkmNoUHiTenEUUaPQcz4RFzrkTE-GaUNP_yK2tNR2i5-TQ4tcI8hQW0aaAsWBPoxd_ZXNty9AhRpshU9WUy32yIHj47jMYCpA
+export INPUT_FAKE_RESPONSE=false
+export INPUT_IGNORE_STATUS=false

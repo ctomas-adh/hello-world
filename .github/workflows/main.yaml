@@ -1,0 +1,26 @@
+name: Test action
+
+on: [push]
+
+jobs:
+  custom_test:
+    runs-on: ubuntu-latest
+    name: We test it locally with act
+    steps:
+      - name: Checkout action repository
+        uses: actions/checkout@v2
+
+      - name: Send GET request to mock API
+        uses: ./ # Uses an action in the root directory
+        id: callapi
+        with:
+          method: GET
+          url: https://reqbin.com/echo/get/json
+          timeout: 40
+          content_type: application/json
+          data: '{ "foo": "bar", "qux": "thud" }'
+          auth_string: CqGZthigPO55H3fi1_6wrP9jmdivueS7lYd7Lg2styBfjsK5eQ5C2qg_gONQgzyvvVojXY0JyMkRdm71y3nTFl1ZYOgJSNLshvWnm9QoEJrInp_xr-o-9RgZHhrGp5X9dCZVYsYF1WHqj5p75O37IKc8Rv6yO9kGw1flCbT4xbeLTDItX71jRzuAHYNKGPKkxrhIuQ-w9MyKYZ0a3pYT4lWZzWVFoMu9G-smC4qrww5grWCUevE9LuNEZgSijFgRK9QPo8PxMt427lGyK-FkoB8x4qllQ1aCG9_mz2t6A1nRxXY7-Jq9ONkmNoUHiTenEUUaPQcz4RFzrkTE-GaUNP_yK2tNR2i5-TQ4tcI8hQW0aaAsWBPoxd_ZXNty9AhRpshU9WUy32yIHj47jMYCpA
+      
+      - name: Get the response status
+        run: |
+          echo "Response status is [${{ steps.callapi.outputs.response_status }}]"
